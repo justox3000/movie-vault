@@ -1,5 +1,8 @@
 import React from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CssBaseline } from "@mui/material";
+import { Link } from "react-router-dom";
+import logoImg from '../logo.png'
 
 const darkTheme = createTheme({
   palette: {
@@ -7,10 +10,16 @@ const darkTheme = createTheme({
   }
 })
 
-const Layout = () => {
+const Layout = ({children}) => {
   return(
     <ThemeProvider theme={darkTheme}>
-
+      <CssBaseline />
+      <div>
+        <Link to="/">
+          <img src={logoImg} alt="movieVault Logo"/>
+        </Link>
+      </div>
+      {children}
     </ThemeProvider>
   );
 }
