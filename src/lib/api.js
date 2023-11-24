@@ -8,7 +8,7 @@ export default class TheMovieDbApi {
 
   searchMovies = async (query) => {
     const response = await fetch(
-    `${this.apiBaseUrl}/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${query}`
+    `${this.apiBaseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`
     );
 
     return response.json();
@@ -16,7 +16,7 @@ export default class TheMovieDbApi {
 
   getGenres = async () => {
     const response = await fetch(
-    `${this.apiBaseUrl}/genre/movie?api_key=${process.env.REACT_APP_API_KEY}`
+    `${this.apiBaseUrl}/genre/movie?api_key=${this.apiKey}`
     );
 
     return response.json();
