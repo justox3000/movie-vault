@@ -2,6 +2,7 @@ import React from "react";
 import { TextField } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { searchMovies } from "../redux/search";
+import Downshift from "downshift";
 
 const Suggestion = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Suggestion = () => {
   }
 
   return(
-    <>
+    <Downshift>
       <TextField
         id = "search"
         placeholder = "Search"
@@ -27,7 +28,7 @@ const Suggestion = () => {
           onChange: inputOnChange
         }}
       />
-    </>
+    </Downshift>
   );
 }
 
