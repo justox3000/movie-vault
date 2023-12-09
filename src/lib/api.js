@@ -1,6 +1,7 @@
 export default class TheMovieDbApi {
   apiBaseUrl = "https://api.themoviedb.org/3";
-  apiKey = process.env.REACT_APP_API_KEY;
+  // apiKey = process.env.REACT_APP_MOVIE_API_KEY;
+  apiKey;
 
   constructor(apiKey) {
     this.apiKey = apiKey;
@@ -8,7 +9,7 @@ export default class TheMovieDbApi {
 
   searchMovies = async (query) => {
     const response = await fetch(
-    `${this.apiBaseUrl}/search/movie?api_key=${this.apiKey}&query=${query}`
+    `${this.apiBaseUrl}/search/movie?query=${query}&api_key=${this.apiKey}`
     );
 
     return response.json();

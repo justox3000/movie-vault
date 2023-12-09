@@ -3,7 +3,7 @@ import { fetchedSearchMovies, searchMovies } from '../redux/search';
 import TheMovieDbApi from '../lib/api';
 
 
-const api = new TheMovieDbApi(process.env.REACT_APP_API_KEY);
+const api = new TheMovieDbApi(process.env.REACT_APP_MOVIE_API_KEY);
 
 function* fetchSearchMovies(action) {
   yield delay(500);
